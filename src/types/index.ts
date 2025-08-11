@@ -4,6 +4,8 @@ import {
   UserSettings,
   UserType,
   VisibilityType,
+  Account,
+  Session,
 } from '@prisma/client'
 
 // Tipos extendidos de Prisma
