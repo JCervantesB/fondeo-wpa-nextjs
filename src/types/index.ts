@@ -136,6 +136,47 @@ export interface Notification {
   }
 }
 
+// Tipos para Toast
+export interface ToasterToast {
+  id: string
+  title?: React.ReactNode
+  description?: React.ReactNode
+  action?: React.ReactElement
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+}
+
+export interface ToastAction {
+  type: 'ADD_TOAST' | 'UPDATE_TOAST' | 'DISMISS_TOAST' | 'REMOVE_TOAST'
+  toast?: ToasterToast
+  toastId?: string
+}
+
+// Tipos para NextAuth
+declare module 'next-auth' {
+  interface Session {
+    user: {
+      id: string
+      email: string
+      name?: string | null
+      image?: string | null
+    }
+  }
+
+  interface User {
+    id: string
+    email: string
+    name?: string | null
+    image?: string | null
+  }
+}
+
+declare module 'next-auth/jwt' {
+  interface JWT {
+    sub: string
+  }
+}
+
 // Re-exportar tipos de Prisma
 export { UserType, VisibilityType } from '@prisma/client'
 export type {

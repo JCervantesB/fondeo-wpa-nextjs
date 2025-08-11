@@ -9,12 +9,6 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 
 ### Added
 
-- Configuración inicial del proyecto Next.js 15 con TypeScript
-- Configuración de TailwindCSS 4
-- Estructura base del proyecto con App Router
-- Configuración de ESLint
-- Documentación inicial del proyecto
-
 ### Changed
 
 ### Deprecated
@@ -24,6 +18,55 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 ### Fixed
 
 ### Security
+
+---
+
+## [0.2.0] - 2025-01-11
+
+### Added
+
+- ✅ **Sistema de autenticación completo con NextAuth.js**
+  - Configuración de NextAuth.js con providers de Google y LinkedIn
+  - Páginas de login y registro (`/auth/signin`, `/auth/signup`)
+  - Middleware de autenticación para rutas protegidas
+  - Sistema de roles (ENTREPRENEUR/INVESTOR)
+  - Dashboard básico protegido
+  - Verificación de email configurada
+  - Sistema de notificaciones con Toast
+- ✅ **Navegación principal implementada**
+  - Componente AuthNav con enlaces de autenticación
+  - Header de navegación en página principal
+  - Enlaces directos a registro por tipo de usuario
+  - Navegación responsive y accesible
+- ✅ **Configuración de variables de entorno**
+  - Variables de NextAuth.js (NEXTAUTH_SECRET, NEXTAUTH_URL)
+  - Credenciales OAuth para Google y LinkedIn
+  - Configuración de email con Mailtrap
+  - Archivo .env.example actualizado
+
+### Changed
+
+- Actualizada página principal con navegación y call-to-action
+- Mejorada estructura de layout con AuthProvider
+- Optimizada configuración de TypeScript para NextAuth
+
+### Fixed
+
+- ✅ **Errores de NextAuth resueltos**
+  - Corregida inconsistencia en nombres de variables de entorno
+  - Solucionados errores CLIENT_FETCH_ERROR y net::ERR_ABORTED
+  - Eliminados archivos .env duplicados
+  - Corregida importación de authOptions en route handler
+- ✅ **Problemas de navegación solucionados**
+  - Añadido componente AuthNav a página principal
+  - Corregidos enlaces de botones de registro
+  - Eliminado elemento de estado innecesario del proyecto
+
+### Security
+
+- Implementada autenticación segura con NextAuth.js
+- Configurado NEXTAUTH_SECRET para producción
+- Variables de entorno protegidas correctamente
 
 ---
 

@@ -1,3 +1,6 @@
+import Link from 'next/link'
+
+import { AuthNav } from '@/components/navigation/auth-nav'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -10,6 +13,22 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+      {/* Header Navigation */}
+      <header className="border-b bg-white/80 shadow-sm backdrop-blur-sm">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <div className="flex items-center">
+              <Link href="/" className="text-2xl font-bold text-blue-600">
+                Fondeo
+              </Link>
+            </div>
+            <div className="flex items-center space-x-4">
+              <AuthNav />
+            </div>
+          </div>
+        </div>
+      </header>
+
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="mb-16 text-center">
@@ -70,24 +89,21 @@ export default function Home() {
             ¿Listo para encontrar tu match perfecto?
           </h2>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button size="lg" className="px-8 py-3 text-lg">
-              Soy Emprendedor
+            <Button size="lg" className="px-8 py-3 text-lg" asChild>
+              <Link href="/auth/signup?type=entrepreneur">Soy Emprendedor</Link>
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 text-lg">
-              Soy Inversor
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-8 py-3 text-lg"
+              asChild
+            >
+              <Link href="/auth/signup?type=investor">Soy Inversor</Link>
             </Button>
           </div>
         </div>
 
         {/* Status */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center rounded-full bg-green-100 px-4 py-2 dark:bg-green-900">
-            <div className="mr-2 h-2 w-2 rounded-full bg-green-500"></div>
-            <span className="text-sm font-medium text-green-800 dark:text-green-200">
-              Fase 1 - Sprint 1: Setup del Proyecto ✅
-            </span>
-          </div>
-        </div>
       </div>
     </div>
   )
