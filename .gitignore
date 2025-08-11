@@ -70,3 +70,4 @@ docs/i18n-implementation.md
 # Cache
 .cache/
 .parcel-cache/
+/src/generated/prisma
