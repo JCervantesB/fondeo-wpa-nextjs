@@ -26,6 +26,20 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 
 ---
 
+## [0.1.2] - 2024-12-19
+
+### Corregido
+- Error de hidratación causado por fuentes de Google (Geist)
+- Eliminadas variables de fuentes no utilizadas en globals.css
+- Actualizado idioma de la aplicación a español
+- Mejorados metadatos del proyecto (título y descripción)
+
+### Técnico
+- **Hidratación:** Resuelto error de mismatch entre servidor y cliente
+- **Fuentes:** Removidas Geist y Geist_Mono para evitar conflictos SSR
+- **Metadatos:** Actualizados con información específica de Fondeo
+- **Idioma:** Cambiado de "en" a "es" en el HTML lang
+
 ## [0.1.1] - 2024-12-19
 
 ### Añadido
